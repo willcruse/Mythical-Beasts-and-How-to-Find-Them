@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "*"
+numpy = "*"
+tqdm = "*"
+python-dotenv = "*"
+torchvision = "*"
+torch = "*"
+scipy = "*"
+jupyter = "*"
+pillow = "*"
+ipympl = "*"
+matplotlib = "*"
+selectivesearch = "*"
+scikit-image = "*"
+sklearn = "*"
+"ruamel.yaml" = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3"

@@ -1,0 +1,73 @@
+predictor_config:
+  region_proposal_config:
+    scale: 900
+    sigma: 1.2
+    min_size: 300
+
+  part_segmentor_configs:
+    pegasus:
+      image_size: 256
+      device: cuda
+
+      stylegan2ada_config:
+        model_path: ./trained/pegasus-gan.pkl
+
+      fewshot_config:
+        in_channels: 4480
+        num_classes: 6
+        size: L
+        model_path: ./trained/fewshot_pegasus.pt
+
+      classes:
+        - background
+        - wing
+        - tail
+        - horse_leg
+        - horse_head
+        - horse_body
+
+    minotaur:
+      image_size: 256
+      device: cuda
+
+      stylegan2ada_config:
+        model_path: ./trained/minotaur-gan.pkl
+
+      fewshot_config:
+        in_channels: 4480
+        num_classes: 5
+        size: L
+        model_path: ./trained/fewshot_minotaur.pt
+
+      classes:
+        - background
+        - horns
+        - bull_head
+        - human_torso
+        - human_legs
+
+    harpy:
+      image_size: 256
+      device: cuda
+
+      stylegan2ada_config:
+        model_path: ./trained/harpy-gan.pkl
+
+      fewshot_config:
+        in_channels: 4480
+        num_classes: 5
+        size: L
+        model_path: ./trained/fewshot_harpy.pt
+
+      classes:
+        - background
+        - human_head
+        - feathered_body
+        - wing
+        - talon
+      
+  classifier_config:
+    model_path: ./trained/classifier.pkl
+
+images_path: ../mythical-images/image-data.yaml # Path to the mythical images data set
+
