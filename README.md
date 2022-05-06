@@ -10,6 +10,8 @@ The provided Dockerfile can be used to setup an environment to run the project i
 
 Companion repository [Mythical Images](https://github.com/willcruse/mythical-images)
 
+Trained GANs can be found [here](https://drive.google.com/drive/folders/1VuW5AfEWCr2sW7cOa3rLkn2iZqEBstXL?usp=sharing)
+
 
 ## StyleGAN2-ADA &mdash; Official PyTorch implementation
 
