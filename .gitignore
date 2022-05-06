@@ -16,3 +16,6 @@ minotaur
 segmented_images/harpy
 segmented_images/minotaur
 segmented_images/pegasus
+
+!trained/*.pkl
+
