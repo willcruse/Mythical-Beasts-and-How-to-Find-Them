@@ -10,7 +10,16 @@ The provided Dockerfile can be used to setup an environment to run the project i
 
 Companion repository [Mythical Images](https://github.com/willcruse/mythical-images)
 
-Trained GANs can be found [here](https://drive.google.com/drive/folders/1VuW5AfEWCr2sW7cOa3rLkn2iZqEBstXL?usp=sharing)
+Trained Models can be found [here](https://drive.google.com/drive/folders/1VuW5AfEWCr2sW7cOa3rLkn2iZqEBstXL?usp=sharing)
+
+## Running This Project (Pre-Trained)
+1. Download the mythical images repository.
+2. Download the trained models and place them in the `trained` folder
+3. Build the provided Dockerfile `sudo docker build -t wpjc20-diss .`
+4. Use the command ```sudo docker run --shm-size=2g --privileged --gpus all -it --rm -p 8888:8888 -v `pwd`:/scratch --user $(id -u):$(id -g) --workdir=/scratch -e HOME=/scratch wpjc20-diss /bin/bash"``` to enter the docker container
+5. Install dependencies using `pipenv install`
+6. Train the classifier `cd classifier && pipenv run python classifier.py`
+6. Run the predictor with `cd .. && pipenv run python evaluate.py`
 
 
 ## StyleGAN2-ADA &mdash; Official PyTorch implementation
